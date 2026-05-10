@@ -330,15 +330,6 @@
           );
       }
 
-      .dress-code::before,
-      .dress-code::after {
-        content: '~';
-        position: absolute;
-        font-size: 3rem;
-        color: var(--dark-green);
-        opacity: 0.2;
-      }
-
       .dress-code::before {
         top: 20px;
         left: 30%;
@@ -785,6 +776,7 @@
         content: '';
         width: 10px;
         height: 10px;
+        min-height: 10px;
         background: var(--white);
         border-radius: 50%;
       }
@@ -1237,7 +1229,7 @@
           </div>
 
           <div class="rsvp-question">
-            <h4>Вы придёте на нашу свадьбу?</h4>
+            <h4>Вы придёте на наш вечер?</h4>
             <div class="radio-group">
               <label class="radio-option">
                 <input type="radio" name="attendance" value="yes" required />
