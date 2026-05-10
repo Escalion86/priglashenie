@@ -11,22 +11,11 @@
       rel="stylesheet"
     />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --gold: #ffe4c4;
-        --dark-green: #0a3428;
-        --wine: #751a2c;
-        --dark-wine: #430e18;
-        --purple: #4e3356;
-        --black: #ffffff;
-        --cream: #f5e6d3;
-        --white: #fefcf8;
-        --milk: #faf7f2;
+      html {
+        overflow-x: hidden !important;
+        max-width: 100%;
+        overscroll-behavior-x: none;
+        touch-action: pan-y;
       }
 
       body {
@@ -34,7 +23,9 @@
         background: var(--milk);
         color: #4a4a4a;
         min-height: 100vh;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
+        touch-action: pan-y;
+        overscroll-behavior-x: none;
         background-image:
           radial-gradient(
             circle at 20% 50%,
@@ -106,6 +97,7 @@
         padding: 60px 20px;
         position: relative;
         z-index: 0;
+        overflow-x: hidden;
         background: var(--milk);
         overflow: hidden;
       }
@@ -882,7 +874,8 @@
     </style>
   </head>
   <body>
-    <!-- Hero Section -->
+    <div id="wrapper" style="overflow-x: hidden; width: 100%; position: relative;">
+      <!-- Hero Section -->
     <section class="hero">
       <img src="img/pero1.png" class="feather-decoration feather-left" alt="" />
       <img
@@ -928,8 +921,8 @@
         <p class="invitation-text">
           Мы уже знаем, что такое «горько», фата и выкупы. Теперь хотим иначе:
           просто сказать друг другу «да» под звуки музыки, танцев и при
-          свечах.<br />В стиле "Бохо" — глубоко, душевно, без пафоса.
-          <br />Поэтому зовём вас не на свадьбу, а на семейный вечер, где
+          свечах.<br /><br />В стиле "Бохо" — глубоко, душевно, без пафоса.
+          <br /><br />Поэтому зовём вас не на свадьбу, а на семейный вечер, где
           главное наши сердца и вы рядом.
         </p>
       </div>
@@ -1000,7 +993,9 @@
         alt=""
       />
       <div class="container">
-        <h2 class="section-title" style="color: var(--gold)">Программа вечера</h2>
+        <h2 class="section-title" style="color: var(--gold)">
+          Программа вечера
+        </h2>
         <div class="timeline">
           <div class="timeline-item">
             <span class="timeline-time">18:00</span>
@@ -1306,6 +1301,27 @@
     </footer>
 
     <script>
+      // Prevent horizontal scroll on mobile
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      document.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      document.addEventListener('touchmove', function(e) {
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const diffX = Math.abs(touchX - touchStartX);
+        const diffY = Math.abs(touchY - touchStartY);
+
+        // If horizontal movement is greater than vertical, prevent scroll
+        if (diffX > diffY) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
       // Auto-fill guest name from URL query parameter
       document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search)
@@ -1397,6 +1413,7 @@
           })
         })
       })
-    </script>
+      </script>
+    </div>
   </body>
 </html>
