@@ -487,10 +487,6 @@
         opacity: 0.3;
       }
 
-      .timeline-item:last-child .timeline-dot::after {
-        display: none;
-      }
-
       .timeline-content h4 {
         font-family: 'Cormorant Garamond', serif;
         font-size: 1.5rem;
@@ -760,6 +756,7 @@
       .radio-custom {
         width: 24px;
         height: 24px;
+        min-width: 24px;
         border: 2px solid var(--wine);
         border-radius: 50%;
         display: flex;
@@ -776,7 +773,6 @@
         content: '';
         width: 10px;
         height: 10px;
-        min-width: 10px;
         background: var(--white);
         border-radius: 50%;
       }
