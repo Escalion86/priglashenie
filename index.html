@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Приглашение на свадьбу Алексея и Надежды</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gold: #c3a161;
+        --dark-green: #0a3428;
+        --wine: #751a2c;
+        --dark-wine: #430e18;
+        --purple: #4e3356;
+        --black: #ffffff;
+        --cream: #f5e6d3;
+        --white: #fefcf8;
+        --milk: #faf7f2;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: var(--milk);
+        color: #4a4a4a;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(195, 161, 97, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(117, 26, 44, 0.04) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(10, 52, 40, 0.05) 0%,
+            transparent 50%
+          );
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Boho Decorations */
+      .boho-divider {
+        text-align: center;
+        padding: 40px 0;
+        opacity: 0.6;
+      }
+
+      .boho-divider svg {
+        width: 80px;
+        height: 80px;
+        fill: var(--gold);
+      }
+
+      .feather-decoration {
+        position: absolute;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+
+      .feather-left {
+        left: 5%;
+        top: 20%;
+        transform: rotate(-15deg);
+      }
+
+      .feather-right {
+        right: 5%;
+        top: 30%;
+        transform: rotate(15deg) scaleX(-1);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+        background: var(--milk);
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 80%,
+            rgba(245, 230, 211, 0.5) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 20%,
+            rgba(10, 52, 40, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 50%,
+            rgba(117, 26, 44, 0.04) 0%,
+            transparent 70%
+          );
+        opacity: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .couple-photo {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid var(--cream);
+        box-shadow: 0 15px 50px rgba(117, 26, 44, 0.15);
+        margin-bottom: 40px;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      .subtitle {
+        font-family: 'Pinyon Script', cursive;
+        font-size: 2.2rem;
+        color: var(--gold);
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards 0.5s;
+      }
+
+      .couple-names {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 4rem;
+        font-weight: 500;
+        letter-spacing: 8px;
+        margin-bottom: 30px;
+        color: var(--wine);
+        opacity: 0;
+        animation: fadeIn 1s ease forwards 0.7s;
+      }
+
+      .couple-names span {
+        color: var(--wine);
+      }
+
+      .ampersand {
+        font-family: 'Pinyon Script', cursive;
+        font-size: 3rem;
+        margin: 0 15px;
+        color: var(--gold);
+      }
+
+      .date-hero {
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 6px;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards 0.9s;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        cursor: pointer;
+      }
+
+      .scroll-indicator svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--gold);
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-15px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-8px);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Invitation Section */
+      .invitation {
+        background: var(--white);
+        color: var(--wine);
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        background-image:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(195, 161, 97, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(10, 52, 40, 0.06) 0%,
+            transparent 40%
+          );
+      }
+
+      .invitation::before {
+        content: '✿';
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: var(--dark-green);
+        opacity: 0.3;
+      }
+
+      .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: var(--wine);
+      }
+
+      .invitation-text {
+        font-size: 1.2rem;
+        line-height: 2;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        color: #333;
+      }
+
+      /* Dress Code Section */
+      .dress-code {
+        background: var(--milk);
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        background-image:
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(195, 161, 97, 0.08) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 20% 70%,
+            rgba(10, 52, 40, 0.06) 0%,
+            transparent 40%
+          );
+      }
+
+      .dress-code::before,
+      .dress-code::after {
+        content: '~';
+        position: absolute;
+        font-size: 3rem;
+        color: var(--dark-green);
+        opacity: 0.2;
+      }
+
+      .dress-code::before {
+        top: 20px;
+        left: 30%;
+      }
+
+      .dress-code::after {
+        bottom: 20px;
+        right: 30%;
+      }
+
+      .color-palette {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .color-item {
+        text-align: center;
+      }
+
+      .color-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        border: 4px solid var(--white);
+        transition: transform 0.3s ease;
+      }
+
+      .color-circle:hover {
+        transform: scale(1.1);
+      }
+
+      .color-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .dress-code-note {
+        margin-top: 40px;
+        font-size: 1.1rem;
+        color: #666;
+        font-style: italic;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Program Section */
+      .program {
+        background: var(--dark-green);
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        background-image: radial-gradient(
+          circle at 50% 50%,
+          rgba(195, 161, 97, 0.08) 0%,
+          transparent 50%
+        );
+      }
+
+      .program::before {
+        content: '❋';
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        color: var(--gold);
+        opacity: 0.2;
+      }
+
+      .timeline {
+        max-width: 600px;
+        margin: 50px auto 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        text-align: left;
+      }
+
+      .timeline-time {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        min-width: 120px;
+        color: var(--gold);
+      }
+
+      .timeline-dot {
+        width: 15px;
+        height: 15px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin: 0 25px;
+        position: relative;
+      }
+
+      .timeline-dot::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 50px;
+        background: var(--gold);
+        opacity: 0.3;
+      }
+
+      .timeline-item:last-child .timeline-dot::after {
+        display: none;
+      }
+
+      .timeline-content h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        color: var(--cream);
+      }
+
+      .timeline-content p {
+        font-size: 0.95rem;
+        color: rgba(245, 230, 211, 0.7);
+      }
+
+      /* Gallery Section */
+      .gallery {
+        background: var(--white);
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: 50px auto 0;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        aspect-ratio: 4/5;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(transparent, rgba(117, 26, 44, 0.4));
+        pointer-events: none;
+      }
+
+      /* Location Section */
+      .location {
+        background: linear-gradient(135deg, var(--wine) 0%, var(--purple) 100%);
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .location-card {
+        background: var(--white);
+        color: var(--wine);
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 800px;
+        margin: 50px auto 0;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .location-info {
+        padding: 50px 40px;
+      }
+
+      .venue-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: var(--wine);
+      }
+
+      .venue-address {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 350px;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 35px;
+        background: linear-gradient(135deg, var(--wine) 0%, var(--purple) 100%);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .map-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(117, 26, 44, 0.4);
+      }
+
+      .map-link svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* RSVP Section */
+      .rsvp {
+        background: var(--white);
+        color: var(--wine);
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .rsvp-form {
+        max-width: 600px;
+        margin: 50px auto 0;
+        text-align: left;
+      }
+
+      .rsvp-question {
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(117, 26, 44, 0.05) 0%,
+          rgba(78, 51, 86, 0.05) 100%
+        );
+        border-radius: 15px;
+        border: 1px solid rgba(117, 26, 44, 0.1);
+      }
+
+      .rsvp-question h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--wine);
+      }
+
+      .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .radio-option input {
+        display: none;
+      }
+
+      .radio-custom {
+        width: 24px;
+        height: 24px;
+        border: 2px solid var(--wine);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .radio-option input:checked + .radio-custom {
+        background: var(--wine);
+      }
+
+      .radio-option input:checked + .radio-custom::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: var(--white);
+        border-radius: 50%;
+      }
+
+      .radio-label {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .textarea-group {
+        margin-top: 20px;
+      }
+
+      .textarea-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid rgba(117, 26, 44, 0.2);
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .textarea-group textarea:focus {
+        outline: none;
+        border-color: var(--wine);
+      }
+
+      .submit-btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 40px auto 0;
+        padding: 18px 40px;
+        background: linear-gradient(135deg, var(--wine) 0%, var(--purple) 100%);
+        color: var(--white);
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 2px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(117, 26, 44, 0.4);
+      }
+
+      .success-message {
+        display: none;
+        padding: 40px;
+        background: linear-gradient(135deg, var(--dark-green) 0%, #0a4a38 100%);
+        border-radius: 15px;
+        color: var(--white);
+        margin-top: 30px;
+      }
+
+      .success-message.show {
+        display: block;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .success-message h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--dark-wine) 0%,
+          var(--purple) 100%
+        );
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .footer-hearts {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .footer-text {
+        font-family: 'Pinyon Script', cursive;
+        font-size: 2rem;
+        color: var(--gold);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .couple-names {
+          font-size: 2.5rem;
+          letter-spacing: 4px;
+        }
+
+        .couple-photo {
+          width: 200px;
+          height: 200px;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .timeline-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .timeline-dot {
+          margin: 15px 0;
+        }
+
+        .timeline-dot::after {
+          top: 15px;
+          height: 30px;
+        }
+
+        .timeline-content {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <img src="fotos/1.jpg" alt="Алексей и Надежда" class="couple-photo" />
+        <p class="subtitle">Приглашение на свадьбу</p>
+        <h1 class="couple-names">
+          <span>Алексей</span>
+          <span class="ampersand">&</span>
+          <span>Надежда</span>
+        </h1>
+        <p class="date-hero">20 АВГУСТА 2026</p>
+      </div>
+      <div class="scroll-indicator" onclick="scrollToSection('invitation')">
+        <svg viewBox="0 0 24 24">
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Invitation Section -->
+    <section class="invitation" id="invitation">
+      <div class="container">
+        <h2 class="section-title">Дорогие гости!</h2>
+        <p class="invitation-text">
+          Мы рады сообщить, что этот особенный день мы хотим провести в кругу
+          самых близких и дорогих нам людей. Ваше присутствие сделает нашу
+          свадьбу ещё более незабываемой!
+        </p>
+      </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section class="dress-code">
+      <div class="container">
+        <h2 class="section-title">Дресс-код</h2>
+        <p class="dress-code-note">
+          Мы будем рады видеть вас в нарядах следующих оттенков
+        </p>
+        <div class="color-palette">
+          <div class="color-item">
+            <div class="color-circle" style="background: #c3a161"></div>
+            <p class="color-name">Золотой</p>
+          </div>
+          <div class="color-item">
+            <div class="color-circle" style="background: #0a3428"></div>
+            <p class="color-name">Изумрудный</p>
+          </div>
+          <div class="color-item">
+            <div
+              class="color-circle"
+              style="background: #ffffff; border: 1px solid #ddd"
+            ></div>
+            <p class="color-name">Белый</p>
+          </div>
+          <div class="color-item">
+            <div class="color-circle" style="background: #430e18"></div>
+            <p class="color-name">Тёмный бордо</p>
+          </div>
+          <div class="color-item">
+            <div class="color-circle" style="background: #4e3356"></div>
+            <p class="color-name">Фиолетовый</p>
+          </div>
+          <div class="color-item">
+            <div
+              class="color-circle"
+              style="background: #ffffff; border: 1px solid #ddd"
+            ></div>
+            <p class="color-name">Белый</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section class="program">
+      <div class="container">
+        <h2 class="section-title" style="color: var(--gold)">Программа дня</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-time">15:00</span>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Сбор гостей</h4>
+              <p>Прибытие гостей, фуршет</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">16:00</span>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Церемония</h4>
+              <p>Торжественная регистрация брака</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">17:00</span>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Фотосессия</h4>
+              <p>Совместные фотографии</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">18:00</span>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Банкет</h4>
+              <p>Праздничный ужин и тосты</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">22:00</span>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Вечеринка</h4>
+              <p>Танцы и развлечения</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <div class="container">
+        <h2 class="section-title">Наши моменты</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="fotos/2.jpg" alt="Фото 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="fotos/3.jpg" alt="Фото 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="fotos/4.jpg" alt="Фото 3" />
+          </div>
+          <div class="gallery-item">
+            <img src="fotos/5.jpg" alt="Фото 4" />
+          </div>
+          <div class="gallery-item">
+            <img src="fotos/6.jpg" alt="Фото 5" />
+          </div>
+          <div class="gallery-item">
+            <img src="fotos/7.jpg" alt="Фото 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+      <div class="container">
+        <h2 class="section-title" style="color: var(--cream)">
+          Место проведения
+        </h2>
+        <div class="location-card">
+          <div class="location-info">
+            <h3 class="venue-name">KitchenLab</h3>
+            <p class="venue-address">
+              ул. Карла Маркса, 75А<br />
+              БЦ «Тихий», Новосибирск
+            </p>
+            <div class="map-container">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A82.9261,55.0282&source=constructor&z=17"
+                style="
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                  border: none;
+                "
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+            <a
+              href="https://go.2gis.com/jxjDR"
+              target="_blank"
+              class="map-link"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+              Открыть на карте
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp" id="rsvp">
+      <div class="container">
+        <h2 class="section-title">Подтверждение присутствия</h2>
+        <p class="invitation-text">
+          Пожалуйста, сообщите нам о своём решении до 1 августа 2026 года
+        </p>
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="rsvp-question">
+            <h4>Ваше имя</h4>
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Как вас представить?"
+                style="
+                  width: 100%;
+                  padding: 15px 20px;
+                  border: 2px solid rgba(117, 26, 44, 0.2);
+                  border-radius: 10px;
+                  font-size: 1.1rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                "
+              />
+            </div>
+          </div>
+
+          <div class="rsvp-question">
+            <h4>Вы придёте на нашу свадьбу?</h4>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="attendance" value="yes" required />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Да, с радостью!</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="attendance" value="no" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">К сожалению, не смогу</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="attendance" value="later" />
+                <span class="radio-custom"></span>
+                <span class="radio-label"
+                  >Затрудняюсь ответить, сообщу позже</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="rsvp-question" id="dietarySection" style="display: none">
+            <h4>Есть ли у вас диетические предпочтения?</h4>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="diet" value="none" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Нет, всё ок</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="diet" value="vegetarian" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Вегетарианское</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="diet" value="vegan" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Веганское</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="diet" value="other" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Другое</span>
+              </label>
+            </div>
+            <div class="textarea-group">
+              <textarea
+                name="dietNote"
+                placeholder="Уточните, если есть особые пожелания..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="rsvp-question" id="drinksSection" style="display: none">
+            <h4>Предпочтения по напиткам</h4>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="drinks" value="all" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Всё подряд</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="drinks" value="wine" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Вино</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="drinks" value="champagne" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Шампанское</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="drinks" value="noAlcohol" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Безалкогольные</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="rsvp-question" id="plusOneSection" style="display: none">
+            <h4>Вы придёте с парой/спутником?</h4>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="plusOne" value="alone" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Один/одна</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="plusOne" value="withPartner" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">С парой</span>
+              </label>
+            </div>
+            <div
+              class="textarea-group"
+              id="partnerNameGroup"
+              style="display: none"
+            >
+              <textarea
+                name="partnerName"
+                placeholder="Имя вашего спутника..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="rsvp-question">
+            <h4>Ваши пожелания или комментарий</h4>
+            <div class="textarea-group">
+              <textarea
+                name="comment"
+                placeholder="Напишите всё, что хотите нам передать..."
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+        <div class="success-message" id="successMessage">
+          <h3>Спасибо за ответ!</h3>
+          <p>Мы получили ваше подтверждение и очень ждём встречи!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-hearts">💍</div>
+      <p class="footer-text">До скорой встречи!</p>
+    </footer>
+
+    <script>
+      // Auto-fill guest name from URL query parameter
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search)
+        const guestName = urlParams.get('name') || urlParams.get('guest')
+
+        // Fill in RSVP form
+        const rsvpNameInput = document.querySelector('input[name="name"]')
+        if (guestName && rsvpNameInput) {
+          rsvpNameInput.value = decodeURIComponent(guestName)
+        }
+      })
+
+      // Scroll function
+      function scrollToSection(sectionId) {
+        document
+          .getElementById(sectionId)
+          .scrollIntoView({ behavior: 'smooth' })
+      }
+
+      // RSVP form logic
+      document.querySelectorAll('input[name="attendance"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+          const dietarySection = document.getElementById('dietarySection')
+          const drinksSection = document.getElementById('drinksSection')
+          const plusOneSection = document.getElementById('plusOneSection')
+
+          if (this.value === 'yes') {
+            dietarySection.style.display = 'block'
+            drinksSection.style.display = 'block'
+            plusOneSection.style.display = 'block'
+          } else {
+            dietarySection.style.display = 'none'
+            drinksSection.style.display = 'none'
+            plusOneSection.style.display = 'none'
+          }
+        })
+      })
+
+      document.querySelectorAll('input[name="plusOne"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+          const partnerGroup = document.getElementById('partnerNameGroup')
+          partnerGroup.style.display =
+            this.value === 'withPartner' ? 'block' : 'none'
+        })
+      })
+
+      // Form submission
+      document
+        .getElementById('rsvpForm')
+        .addEventListener('submit', function (e) {
+          e.preventDefault()
+
+          const formData = new FormData(this)
+          const data = {
+            name: formData.get('name'),
+            attendance: formData.get('attendance'),
+            diet: formData.get('diet'),
+            dietNote: formData.get('dietNote'),
+            drinks: formData.get('drinks'),
+            plusOne: formData.get('plusOne'),
+            partnerName: formData.get('partnerName'),
+            comment: formData.get('comment'),
+            timestamp: new Date().toISOString(),
+          }
+
+          // Store in localStorage (for demo purposes)
+          let responses = JSON.parse(
+            localStorage.getItem('rsvpResponses') || '[]',
+          )
+          responses.push(data)
+          localStorage.setItem('rsvpResponses', JSON.stringify(responses))
+
+          // Show success message
+          this.style.display = 'none'
+          document.getElementById('successMessage').classList.add('show')
+
+          // Scroll to success message
+          document
+            .getElementById('successMessage')
+            .scrollIntoView({ behavior: 'smooth' })
+        })
+
+      // Smooth scroll for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault()
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
