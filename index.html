@@ -57,6 +57,8 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 1;
       }
 
       /* Boho Decorations */
@@ -76,17 +78,20 @@
         position: absolute;
         opacity: 0.15;
         pointer-events: none;
+        width: 200px;
+        height: auto;
+        z-index: 0;
       }
 
       .feather-left {
         left: 5%;
-        top: 20%;
+        bottom: 15%;
         transform: rotate(-15deg);
       }
 
       .feather-right {
         right: 5%;
-        top: 30%;
+        bottom: 20%;
         transform: rotate(15deg) scaleX(-1);
       }
 
@@ -100,6 +105,7 @@
         text-align: center;
         padding: 60px 20px;
         position: relative;
+        z-index: 0;
         background: var(--milk);
         overflow: hidden;
       }
@@ -270,6 +276,25 @@
         opacity: 0.3;
       }
 
+      .invitation {
+        position: relative;
+        z-index: 0;
+      }
+
+      .invitation-feather-1 {
+        left: 8%;
+        top: 15%;
+        width: 120px;
+        transform: rotate(-25deg);
+      }
+
+      .invitation-feather-2 {
+        right: 8%;
+        bottom: 15%;
+        width: 100px;
+        transform: rotate(20deg) scaleX(-1);
+      }
+
       .section-title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 3rem;
@@ -322,6 +347,25 @@
       .dress-code::after {
         bottom: 20px;
         right: 30%;
+      }
+
+      .dress-code {
+        position: relative;
+        z-index: 0;
+      }
+
+      .dresscode-feather-1 {
+        left: 5%;
+        top: 10%;
+        width: 130px;
+        transform: rotate(-10deg);
+      }
+
+      .dresscode-feather-2 {
+        right: 5%;
+        bottom: 10%;
+        width: 110px;
+        transform: rotate(15deg) scaleX(-1);
       }
 
       .color-palette {
@@ -388,6 +432,27 @@
         font-size: 2rem;
         color: var(--gold);
         opacity: 0.2;
+      }
+
+      .program {
+        position: relative;
+        z-index: 0;
+      }
+
+      .program-feather-1 {
+        left: 3%;
+        top: 20%;
+        width: 140px;
+        transform: rotate(-20deg);
+        opacity: 0.1;
+      }
+
+      .program-feather-2 {
+        right: 3%;
+        bottom: 20%;
+        width: 120px;
+        transform: rotate(25deg) scaleX(-1);
+        opacity: 0.1;
       }
 
       .timeline {
@@ -497,6 +562,8 @@
         background: linear-gradient(135deg, var(--wine) 0%, var(--purple) 100%);
         padding: 100px 20px;
         text-align: center;
+        position: relative;
+        z-index: 0;
       }
 
       .location-card {
@@ -566,12 +633,22 @@
         height: 20px;
       }
 
+      .location-feather-1 {
+        right: 5%;
+        top: 10%;
+        width: 150px;
+        transform: rotate(10deg) scaleX(-1);
+        opacity: 0.08;
+      }
+
       /* RSVP Section */
       .rsvp {
         background: var(--white);
         color: var(--wine);
         padding: 100px 20px;
         text-align: center;
+        position: relative;
+        z-index: 0;
       }
 
       .rsvp-form {
@@ -706,6 +783,22 @@
         margin-bottom: 15px;
       }
 
+      .rsvp-feather-1 {
+        left: 5%;
+        top: 15%;
+        width: 130px;
+        transform: rotate(-15deg);
+        opacity: 0.12;
+      }
+
+      .rsvp-feather-2 {
+        right: 5%;
+        bottom: 15%;
+        width: 110px;
+        transform: rotate(20deg) scaleX(-1);
+        opacity: 0.12;
+      }
+
       /* Footer */
       .footer {
         background: linear-gradient(
@@ -715,17 +808,32 @@
         );
         padding: 60px 20px;
         text-align: center;
+        position: relative;
+        z-index: 0;
       }
 
       .footer-hearts {
-        font-size: 3rem;
         margin-bottom: 20px;
+        color: var(--gold);
+        display: inline-block;
+      }
+
+      .footer-hearts svg {
+        vertical-align: middle;
       }
 
       .footer-text {
         font-family: 'Pinyon Script', cursive;
         font-size: 2rem;
         color: var(--gold);
+      }
+
+      .footer-feather {
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        width: 100px;
+        opacity: 0.1;
       }
 
       /* Responsive */
@@ -756,19 +864,39 @@
         .timeline-content {
           text-align: center;
         }
+
+        .feather-decoration {
+          width: 100px;
+        }
+
+        .feather-left {
+          left: 2%;
+          bottom: 15%;
+        }
+
+        .feather-right {
+          right: 2%;
+          bottom: 25%;
+        }
       }
     </style>
   </head>
   <body>
     <!-- Hero Section -->
     <section class="hero">
+      <img src="img/pero1.png" class="feather-decoration feather-left" alt="" />
+      <img
+        src="img/pero3.png"
+        class="feather-decoration feather-right"
+        alt=""
+      />
       <div class="hero-content">
         <img
           src="img/heart_with_photo.png"
           alt="Алексей и Надежда"
           class="couple-photo"
         />
-        <p class="subtitle">Приглашение на семейный вечер любви</p>
+        <p class="subtitle">Приглашение на семейный вечер</p>
         <h1 class="couple-names">
           <span>Алексей</span>
           <span class="ampersand">&</span>
@@ -785,6 +913,16 @@
 
     <!-- Invitation Section -->
     <section class="invitation" id="invitation">
+      <img
+        src="img/pero2.png"
+        class="feather-decoration invitation-feather-1"
+        alt=""
+      />
+      <img
+        src="img/pero1.png"
+        class="feather-decoration invitation-feather-2"
+        alt=""
+      />
       <div class="container">
         <h2 class="section-title">Дорогие гости!</h2>
         <p class="invitation-text">
@@ -799,6 +937,16 @@
 
     <!-- Dress Code Section -->
     <section class="dress-code">
+      <img
+        src="img/pero3.png"
+        class="feather-decoration dresscode-feather-1"
+        alt=""
+      />
+      <img
+        src="img/pero1.png"
+        class="feather-decoration dresscode-feather-2"
+        alt=""
+      />
       <div class="container">
         <h2 class="section-title">Дресс-код</h2>
         <p class="dress-code-note">
@@ -841,6 +989,16 @@
 
     <!-- Program Section -->
     <section class="program">
+      <img
+        src="img/pero2.png"
+        class="feather-decoration program-feather-1"
+        alt=""
+      />
+      <img
+        src="img/pero3.png"
+        class="feather-decoration program-feather-2"
+        alt=""
+      />
       <div class="container">
         <h2 class="section-title" style="color: var(--gold)">Программа дня</h2>
         <div class="timeline">
@@ -917,6 +1075,11 @@
 
     <!-- Location Section -->
     <section class="location">
+      <img
+        src="img/pero1.png"
+        class="feather-decoration location-feather-1"
+        alt=""
+      />
       <div class="container">
         <h2 class="section-title" style="color: var(--cream)">
           Место проведения
@@ -957,6 +1120,16 @@
 
     <!-- RSVP Section -->
     <section class="rsvp" id="rsvp">
+      <img
+        src="img/pero3.png"
+        class="feather-decoration rsvp-feather-1"
+        alt=""
+      />
+      <img
+        src="img/pero2.png"
+        class="feather-decoration rsvp-feather-2"
+        alt=""
+      />
       <div class="container">
         <h2 class="section-title">Подтверждение присутствия</h2>
         <p class="invitation-text">
@@ -1111,7 +1284,24 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-hearts">💍</div>
+      <img
+        src="img/pero1.png"
+        class="feather-decoration footer-feather"
+        alt=""
+      />
+      <div class="footer-hearts">
+        <svg
+          viewBox="0 0 60 30"
+          width="80"
+          height="40"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <circle cx="22" cy="15" r="11" />
+          <circle cx="38" cy="15" r="11" />
+        </svg>
+      </div>
       <p class="footer-text">До скорой встречи!</p>
     </footer>
 
