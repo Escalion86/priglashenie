@@ -137,13 +137,16 @@
 
       .couple-photo {
         width: 280px;
-        height: 280px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 6px solid var(--cream);
-        box-shadow: 0 15px 50px rgba(117, 26, 44, 0.15);
+        height: auto;
+        object-fit: contain;
         margin-bottom: 40px;
         animation: float 6s ease-in-out infinite;
+      }
+
+      @media (min-width: 421px) {
+        .couple-photo {
+          width: 380px;
+        }
       }
 
       @keyframes float {
@@ -733,11 +736,6 @@
           letter-spacing: 4px;
         }
 
-        .couple-photo {
-          width: 200px;
-          height: 200px;
-        }
-
         .section-title {
           font-size: 2.2rem;
         }
@@ -766,7 +764,11 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <img src="fotos/1.jpg" alt="Алексей и Надежда" class="couple-photo" />
+        <img
+          src="img/heart_with_photo.png"
+          alt="Алексей и Надежда"
+          class="couple-photo"
+        />
         <p class="subtitle">Приглашение на свадьбу</p>
         <h1 class="couple-names">
           <span>Алексей</span>
@@ -923,20 +925,17 @@
             <h3 class="venue-name">KitchenLab</h3>
             <p class="venue-address">
               ул. Карла Маркса, 75А<br />
-              БЦ «Тихий», Новосибирск
+              БЦ «Тихий», Красноярск
             </p>
             <div class="map-container">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A82.9261,55.0282&source=constructor&z=17"
-                style="
-                  position: relative;
-                  width: 100%;
-                  height: 100%;
-                  border: none;
-                "
-                loading="lazy"
-              >
-              </iframe>
+                id="map_622484030"
+                frameborder="0"
+                width="100%"
+                height="600px"
+                src="https://makemap.2gis.ru/widget?data=eJw1j0FuwyAQRe8y3aII42CMD9Cqu-witcoChUmLhD0IUymp5bt3Aior9N_w57EBZY8Z_RvSjCUHXGH63KA8EsIEr-jKT0YQkDIlzKVyxqHEJ2fgcb3mkEqgpQVXipT5-iLV2N0UJ7_vi8c7TJ38P7uAr7bwUevathOFpdQGlgqLK1XGqsNodNdZoYeDlHbQw4XfBw-TNXa_CJhdOtEamsIG0RWY2qw-GmOH46ik0gLik7c6pWXf696Y3rAf0cx2I7fyXyjG8zdi_KjpzcUV9z-VtVm5"
+                sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
+              ></iframe>
             </div>
             <a
               href="https://go.2gis.com/jxjDR"
