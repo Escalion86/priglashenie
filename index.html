@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Приглашение на свадьбу Алексея и Надежды</title>
+    <title>Приглашение на семейный вечер Алексея и Надежды</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -613,14 +613,14 @@
         max-width: 700px;
         margin: 0 auto 25px;
         line-height: 1.8;
-        font-weight: 500;
+        font-weight: 800;
       }
 
       .gift-text.secondary {
         font-family: 'Montserrat', sans-serif;
         font-size: 1.1rem;
         color: #666;
-        font-weight: 400;
+        font-weight: 600;
         font-style: italic;
         margin-bottom: 0;
       }
@@ -706,11 +706,12 @@
       }
 
       .location-feather-1 {
-        right: 5%;
-        top: 10%;
+        right: 4%;
+        top: 2%;
         width: 150px;
         transform: rotate(10deg) scaleX(-1);
         opacity: 0.08;
+        z-index: 5;
       }
 
       /* RSVP Section */
@@ -901,10 +902,15 @@
       }
 
       .footer-feather {
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%) rotate(180deg);
+        position: absolute;
+        opacity: 0.15;
+        pointer-events: none;
         width: 100px;
+        height: auto;
+        z-index: 0;
+        bottom: -6%;
+        left: 50%;
+        transform: translateX(-50%) rotate(80deg);
         opacity: 0.1;
       }
 
@@ -1000,8 +1006,8 @@
         <p class="invitation-text">
           Мы уже знаем, что такое «горько», фата и выкупы. Теперь хотим иначе:
           просто сказать друг другу «да» под звуки музыки, танцев и при
-          свечах.<br />В стиле "Бохо" — глубоко, душевно, без пафоса.
-          <br />Поэтому зовём вас не на свадьбу, а на семейный вечер, где
+          свечах.<br /><br />В стиле "Бохо" — глубоко, душевно, без пафоса.
+          <br /><br />Поэтому зовём вас не на свадьбу, а на семейный вечер, где
           главное наши сердца и вы рядом.
         </p>
       </div>
@@ -1160,10 +1166,10 @@
         </h2>
         <div class="location-card">
           <div class="location-info">
-            <h3 class="venue-name">KitchenLab</h3>
+            <h3 class="venue-name">Kitchen Lab</h3>
             <p class="venue-address">
               ул. Карла Маркса, 75А<br />
-              БЦ «Тихий», Красноярск
+              БЦ «Тихий»
             </p>
             <div class="map-container">
               <iframe
@@ -1306,7 +1312,7 @@
               <label class="radio-option">
                 <input type="radio" name="drinks" value="craft" />
                 <span class="radio-custom"></span>
-                <span class="radio-label">Настойка</span>
+                <span class="radio-label">Домашняя настойка</span>
               </label>
               <label class="radio-option">
                 <input type="radio" name="drinks" value="champagne" />
@@ -1381,7 +1387,8 @@
       <div class="container">
         <p class="gift-text">
           Если Вы подготовили для нас сюрприз или творческий подарок, то не
-          забудьте предупредить нашего ведущего Алексея <span class="nowrap">+7 960 768-74-75</span>
+          забудьте предупредить нашего ведущего Алексея
+          <span class="nowrap">+7 960 768-74-75</span>
         </p>
         <p class="gift-text secondary">
           Пожалуйста не ломайте голову над подарком, ваши конверты помогут
@@ -1392,11 +1399,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <img
-        src="img/pero1.png"
-        class="feather-decoration footer-feather"
-        alt=""
-      />
+      <img src="img/pero1.png" class="footer-feather" alt="" />
       <div class="footer-hearts">
         <svg
           viewBox="0 0 60 30"
