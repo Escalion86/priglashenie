@@ -899,6 +899,51 @@
         color: #333;
       }
 
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .checkbox-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .checkbox-option input {
+        display: none;
+      }
+
+      .checkbox-custom {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        border: 2px solid var(--wine);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox-option input:checked + .checkbox-custom {
+        background: var(--wine);
+      }
+
+      .checkbox-option input:checked + .checkbox-custom::after {
+        content: '✓';
+        color: var(--white);
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .checkbox-label {
+        font-size: 1rem;
+        color: #333;
+      }
+
       .textarea-group {
         margin-top: 20px;
       }
@@ -1115,9 +1160,9 @@
         <p class="invitation-text">
           Мы уже знаем, что такое «горько», фата и выкупы. Теперь хотим иначе:
           просто сказать друг другу «да» под звуки музыки, танцев и при
-          свечах.<br /><br />В стиле "Бохо" — глубоко, душевно, без пафоса.
-          <br /><br />Поэтому зовём вас не на свадьбу, а на семейный вечер, где
-          главное наши сердца и вы рядом.
+          свечах.<br /><br />В стиле "Гранатовое Бохо" — глубоко, душевно, без
+          пафоса. <br /><br />Поэтому зовём вас не на свадьбу, а на семейный
+          вечер, где главное наши сердца и вы рядом.
         </p>
       </div>
     </section>
@@ -1452,47 +1497,47 @@
           </div>
 
           <div class="rsvp-question" id="drinksSection" style="display: none">
-            <h4>Предпочтения по напиткам</h4>
-            <div class="radio-group">
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="all" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Всё подряд</span>
+            <h4>Предпочтения по напиткам (можно выбрать несколько)</h4>
+            <div class="checkbox-group">
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="all" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Всё подряд</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="wineWhiteDry" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Вино белое сухое</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="wineWhiteDry" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Вино белое сухое</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="wineWhiteSweet" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Вино белое полусладкое</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="wineWhiteSweet" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Вино белое полусладкое</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="wineRedDry" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Вино красное сухое</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="wineRedDry" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Вино красное сухое</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="wineRedSweet" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Вино красное полусладкое</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="wineRedSweet" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Вино красное полусладкое</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="craft" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Домашняя настойка</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="craft" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Домашняя настойка</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="champagne" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Шампанское</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="champagne" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Шампанское</span>
               </label>
-              <label class="radio-option">
-                <input type="radio" name="drinks" value="noAlcohol" />
-                <span class="radio-custom"></span>
-                <span class="radio-label">Безалкогольные</span>
+              <label class="checkbox-option">
+                <input type="checkbox" name="drinks" value="noAlcohol" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">Безалкогольные</span>
               </label>
             </div>
           </div>
@@ -1667,7 +1712,7 @@
             attendance: formData.get('attendance'),
             diet: formData.get('diet'),
             dietNote: formData.get('dietNote'),
-            drinks: formData.get('drinks'),
+            drinks: formData.getAll('drinks').join(', '),
             plusOne: formData.get('plusOne'),
             partnerName: formData.get('partnerName'),
             comment: formData.get('comment'),

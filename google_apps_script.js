@@ -44,7 +44,7 @@ function doPost(e) {
       data.attendance || '',
       data.diet || '',
       data.dietNote || '',
-      data.drinks || '',
+      Array.isArray(data.drinks) ? data.drinks.join(', ') : data.drinks || '',
       data.plusOne || '',
       data.partnerName || '',
       data.comment || '',
