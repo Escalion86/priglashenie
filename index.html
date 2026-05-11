@@ -17,6 +17,12 @@
         box-sizing: border-box;
       }
 
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
       :root {
         --gold: #ffe4c4;
         --dark-green: #0a3428;
@@ -401,6 +407,79 @@
         margin-right: auto;
       }
 
+      .dress-code-content {
+        max-width: 700px;
+        margin: 40px auto 0;
+        text-align: left;
+      }
+
+      .dress-code-section {
+        margin-bottom: 35px;
+      }
+
+      .dress-code-subtitle {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.6rem;
+        color: var(--wine);
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .welcome-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        color: #666;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .dress-code-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .dress-code-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .dress-code-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--wine);
+        font-size: 1.4rem;
+        line-height: 1.4;
+      }
+
+      .dress-code-tip {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #555;
+        font-style: italic;
+        padding: 20px;
+        background: rgba(117, 26, 44, 0.05);
+        border-radius: 10px;
+        border-left: 3px solid var(--wine);
+      }
+
+      .tip .dress-code-subtitle {
+        color: var(--dark-green);
+      }
+
+      .dont .dress-code-subtitle {
+        color: #8b0000;
+      }
+
+      .dont .dress-code-list li::before {
+        color: #8b0000;
+      }
+
       /* Program Section */
       .program {
         background: var(--dark-green);
@@ -610,6 +689,44 @@
         font-weight: 600;
         font-style: italic;
         margin-bottom: 0;
+      }
+
+      .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+      }
+
+      .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .call-btn {
+        background: linear-gradient(135deg, var(--wine) 0%, var(--purple) 100%);
+        color: var(--white);
+      }
+
+      .telegram-btn {
+        background: linear-gradient(135deg, #0088cc 0%, #005f8f 100%);
+        color: var(--white);
+      }
+
+      .contact-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
 
       .nowrap {
@@ -853,7 +970,7 @@
       }
 
       .rsvp-feather-2 {
-        right: 5%;
+        right: 10%;
         bottom: 15%;
         width: 110px;
         transform: rotate(20deg) scaleX(-1);
@@ -887,6 +1004,10 @@
         font-family: 'Pinyon Script', cursive;
         font-size: 2rem;
         color: var(--gold);
+      }
+      .footer-text.small {
+        font-size: 1.2rem;
+        margin: 0 0 20px 0;
       }
 
       .footer-feather {
@@ -1015,9 +1136,60 @@
       />
       <div class="container">
         <h2 class="section-title">Дресс-код</h2>
-        <p class="dress-code-note">
-          Мы будем рады видеть вас в нарядах следующих оттенков
-        </p>
+        <div class="dress-code-content">
+          <div class="dress-code-section">
+            <h3 class="dress-code-subtitle">Что можно надеть:</h3>
+            <ul class="dress-code-list">
+              <li>
+                Платья и костюмы из натуральных тканей (лен, хлопок, бархат,
+                шифон)
+              </li>
+              <li>Свободные, летящие силуэты, многослойные юбки</li>
+              <li>
+                Мужчинам: льняные рубашки, жилетки, мягкие пиджаки светлых тонов
+                или брюки цвета графит/хаки
+              </li>
+              <li>Обувь: сандалии, лоферы, ботинки в стиле винтаж, кеды</li>
+            </ul>
+          </div>
+          <div class="dress-code-section">
+            <h3 class="dress-code-subtitle">
+              Аксессуары в стиле бохо
+              <span class="welcome-text">(приветствуются!)</span>:
+            </h3>
+            <ul class="dress-code-list">
+              <li>Деревянные украшения и гребни</li>
+              <li>
+                Серьги и браслеты с вкраплениями граната, аметиста или малахита
+              </li>
+              <li>Пояса с монетами или кистями</li>
+              <li>Шляпы с широкими полями (федора, флоппи)</li>
+              <li>
+                Цветы в волосах (живые или текстильные), венки из сухоцветов,
+                перья
+              </li>
+              <li>Вышивка, макраме, кружево, бахрома</li>
+            </ul>
+          </div>
+          <div class="dress-code-section tip">
+            <h3 class="dress-code-subtitle">Совет:</h3>
+            <p class="dress-code-tip">
+              Достаточно использовать 1–2 цвета из палитры и добавить
+              бохо-элемент (например, кремовое платье + гранатовое колье и пояс
+              с кистями)
+            </p>
+          </div>
+          <div class="dress-code-section dont">
+            <h3 class="dress-code-subtitle">Что лучше не надевать:</h3>
+            <ul class="dress-code-list">
+              <li>классические черные деловые костюмы</li>
+              <li>белые смокинги</li>
+              <li>глянцевые синтетические ткани</li>
+              <li>кроссовки</li>
+              <li>галстуки</li>
+            </ul>
+          </div>
+        </div>
         <div class="color-palette">
           <div class="color-item">
             <div class="color-circle" style="background: #ffe4c4"></div>
@@ -1035,11 +1207,11 @@
             <p class="color-name">Белый</p>
           </div> -->
           <div class="color-item">
-            <div class="color-circle" style="background: #430e18"></div>
-            <p class="color-name">Винный</p>
+            <div class="color-circle" style="background: #90021f"></div>
+            <p class="color-name">Гранатовый</p>
           </div>
           <div class="color-item">
-            <div class="color-circle" style="background: #4e3356"></div>
+            <div class="color-circle" style="background: #5e3356"></div>
             <p class="color-name">Фиолетовый</p>
           </div>
           <div class="color-item">
@@ -1378,15 +1550,37 @@
           забудьте предупредить нашего ведущего Алексея
           <span class="nowrap">+7 960 768-74-75</span>
         </p>
-        <p class="gift-text secondary">
-          Пожалуйста не ломайте голову над подарком, ваши конверты помогут
-          осуществить наши планы
-        </p>
+        <div class="contact-buttons">
+          <a href="tel:+79607687475" class="contact-btn call-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
+            </svg>
+            Позвонить
+          </a>
+          <a
+            href="https://t.me/Filippovevent"
+            target="_blank"
+            class="contact-btn telegram-btn"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path
+                d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"
+              />
+            </svg>
+            Telegram
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+      <p class="footer-text small">
+        Пожалуйста не ломайте голову над подарком, ваши конверты помогут
+        осуществить наши планы
+      </p>
       <img src="img/pero1.png" class="footer-feather" alt="" />
       <div class="footer-hearts">
         <svg
@@ -1467,24 +1661,39 @@
             plusOne: formData.get('plusOne'),
             partnerName: formData.get('partnerName'),
             comment: formData.get('comment'),
-            timestamp: new Date().toISOString(),
           }
 
-          // Store in localStorage (for demo purposes)
-          let responses = JSON.parse(
-            localStorage.getItem('rsvpResponses') || '[]',
-          )
-          responses.push(data)
-          localStorage.setItem('rsvpResponses', JSON.stringify(responses))
+          // Send to Google Sheets
+          const scriptURL =
+            'https://script.google.com/macros/s/AKfycbyEMDpbrOec-PhkKF6OiJuDpDitu403fMzNV5YceIQSyneD0GgX7R0aZ8zVJB-ZT8I/exec'
 
-          // Show success message
-          this.style.display = 'none'
-          document.getElementById('successMessage').classList.add('show')
+          // Disable button to prevent double submission
+          const submitBtn = this.querySelector('.submit-btn')
+          submitBtn.disabled = true
+          submitBtn.textContent = 'Отправка...'
 
-          // Scroll to success message
-          document
-            .getElementById('successMessage')
-            .scrollIntoView({ behavior: 'smooth' })
+          fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(() => {
+              // With no-cors mode we can't read the response, but if no error thrown - it's likely successful
+              // Show success message
+              this.style.display = 'none'
+              document.getElementById('successMessage').classList.add('show')
+              document
+                .getElementById('successMessage')
+                .scrollIntoView({ behavior: 'smooth' })
+            })
+            .catch((error) => {
+              alert('Произошла ошибка при отправке. Попробуйте позже.')
+              console.error('Error:', error)
+              // Re-enable button on error
+              submitBtn.disabled = false
+              submitBtn.textContent = 'Отправить'
+            })
         })
 
       // Smooth scroll for all anchor links
