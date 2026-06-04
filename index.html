@@ -1290,7 +1290,7 @@
             <span class="timeline-dot"></span>
             <div class="timeline-content">
               <h4>Роспись в ЗАГСЕ</h4>
-              <p>Неторжественная регистрация</p>
+              <p>Неторжественная регистрация (посещение по желанию)</p>
             </div>
           </div>
           <div class="timeline-item">
@@ -1381,11 +1381,11 @@
             <p class="venue-address">ул. Коммунальная, 26</p>
             <div class="map-container">
               <iframe
-                id="map_622484030"
+                id="map_646690807"
                 frameborder="0"
                 width="100%"
                 height="600px"
-                src="https://makemap.2gis.ru/widget?data=eJw1j0FuwyAQRe8y3aII42CMD9Cqu-witcoChUmLhD0IUymp5bt3Aior9N_w57EBZY8Z_RvSjCUHXGH63KA8EsIEr-jKT0YQkDIlzKVyxqHEJ2fgcb3mkEqgpQVXipT5-iLV2N0UJ7_vi8c7TJ38P7uAr7bwUevathOFpdQGlgqLK1XGqsNodNdZoYeDlHbQw4XfBw-TNXa_CJhdOtEamsIG0RWY2qw-GmOH46ik0gLik7c6pWXf696Y3rAf0cx2I7fyXyjG8zdi_KjpzcUV9z-VtVm5"
+                src="https://makemap.2gis.ru/widget?data=eJw1jlFLxDAQhP_L-lqONNcml8I9iYoKcoIgKPdQmj0Npt2S7oFn6X932-o-zszOfCNQ8pjQ3yG1yCngANX7CHzpESq4xZrPCSGDPlGPiRd_hIYiJfGvlN7lJy0-B47zh3o4PX89Xb-ox5u9yB6HJoWeA3ViivBz33n8hipX_zdl8LGOX-bqv-UDhY4l35AAhq7mBczpjdsqq8qsNBulrN5tj_IfPFRFrqdjBm3dH2gI6-AIsWaolqwxrnRaWWONziDO9trmXFEYOaut4BG1AmelVMApxtdPxPi2qJzOOP0CARlcpg"
                 sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"
               ></iframe>
             </div>
@@ -1404,10 +1404,11 @@
           </div>
         </div>
       </div>
-      <p></p>
-      <p></p>
       <div class="container">
-        <h2 class="section-title" style="color: var(--cream)">
+        <h2
+          class="section-title"
+          style="color: var(--cream); margin-top: 100px"
+        >
           Место проведения вечера
         </h2>
         <div class="location-card">
@@ -1479,6 +1480,32 @@
                   text-align: center;
                 "
               />
+            </div>
+          </div>
+
+          <div class="rsvp-question">
+            <h4>Вы придёте на нашу неторжественную регистрацию?</h4>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="ceremonyAttendance"
+                  value="yes"
+                  required
+                />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Да</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="ceremonyAttendance" value="no" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Нет</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="ceremonyAttendance" value="later" />
+                <span class="radio-custom"></span>
+                <span class="radio-label">Сообщу позже</span>
+              </label>
             </div>
           </div>
 
@@ -1750,6 +1777,7 @@
           const formData = new FormData(this)
           const data = {
             name: formData.get('name'),
+            ceremonyAttendance: formData.get('ceremonyAttendance'),
             attendance: formData.get('attendance'),
             diet: formData.get('diet'),
             dietNote: formData.get('dietNote'),

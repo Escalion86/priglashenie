@@ -27,6 +27,7 @@ function doPost(e) {
       sheet.appendRow([
         'Дата отправки',
         'Имя гостя',
+        'Регистрация',
         'Присутствие',
         'Диета',
         'Примечание к диете',
@@ -41,6 +42,7 @@ function doPost(e) {
     sheet.appendRow([
       new Date(),
       data.name || '',
+      data.ceremonyAttendance || '',
       data.attendance || '',
       data.diet || '',
       data.dietNote || '',
