@@ -35,6 +35,7 @@ function doPost(e) {
         'Спутник',
         'Имя спутника',
         'Комментарий',
+        'Телефон гостя',
       ])
     }
 
@@ -50,6 +51,7 @@ function doPost(e) {
       data.plusOne || '',
       data.partnerName || '',
       data.comment || '',
+      data.phone || '',
     ])
 
     // Возвращаем успешный ответ

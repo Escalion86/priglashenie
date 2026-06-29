@@ -1464,7 +1464,7 @@
         </p>
         <form class="rsvp-form" id="rsvpForm">
           <div class="rsvp-question">
-            <h4>Ваше имя</h4>
+            <h4>Ваши Имя и Фамилия</h4>
             <div class="form-group">
               <input
                 type="text"
@@ -1646,6 +1646,27 @@
             </div>
           </div>
 
+          <div class="rsvp-question">
+            <h4>Ваш телефон</h4>
+            <div class="form-group">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+7 999 123-45-67"
+                autocomplete="tel"
+                style="
+                  width: 100%;
+                  padding: 15px 20px;
+                  border: 2px solid rgba(117, 26, 44, 0.2);
+                  border-radius: 10px;
+                  font-size: 1.1rem;
+                  font-family: 'Montserrat', sans-serif;
+                  text-align: center;
+                "
+              />
+            </div>
+          </div>
+
           <button type="submit" class="submit-btn">Отправить</button>
         </form>
         <div class="success-message" id="successMessage">
@@ -1785,6 +1806,7 @@
             plusOne: formData.get('plusOne'),
             partnerName: formData.get('partnerName'),
             comment: formData.get('comment'),
+            phone: formData.get('phone'),
           }
 
           // Send to Google Sheets
